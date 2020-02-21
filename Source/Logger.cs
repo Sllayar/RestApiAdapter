@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FavoritMotors.Integration.RestApiAdapter
 {
-    public class Logger : ILogger
+    internal class Logger : ILogger
     {
         public Logger(ResponseData result, string logFileDir, string logFileName)
         {
@@ -23,7 +23,7 @@ namespace FavoritMotors.Integration.RestApiAdapter
         /// Запись информации в LOG-файл
         /// </summary>
         /// <param name="ResponseData">Объект, содержащий результаты вызова метода удаленного сервиса/param>
-        private void WriteLog(ResponseData ResponseData)
+        public void WriteLog(ResponseData ResponseData)
         {
 
             double previousTime = 0D;

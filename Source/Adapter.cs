@@ -115,6 +115,7 @@ namespace FavoritMotors.Integration.RestApiAdapter
             result.EndTime = stopwatch.Elapsed.TotalMilliseconds;
             
             TryPrcessException(result);
+
             TryWriteLog(result);
                                  
             return result;
@@ -148,7 +149,7 @@ namespace FavoritMotors.Integration.RestApiAdapter
 
                 if (!IsLogErrorOnly || result.IsError)
                 {
-                    logger.writWriteLogeLog(result);
+                    ((Logger)logger).WriteLog(result);
                 }
             }
         }
