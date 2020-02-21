@@ -2,5 +2,6 @@
 {
     internal interface ILogger
     {
+        void WriteLog(ResponseData ResponseData);
     }
 }

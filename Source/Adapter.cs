@@ -137,7 +137,8 @@ namespace FavoritMotors.Integration.RestApiAdapter
                 }
             }
             catch
-            {           }
+            {
+            }
         }
 
         private void TryWriteLog(ResponseData result)
@@ -149,7 +150,7 @@ namespace FavoritMotors.Integration.RestApiAdapter
 
                 if (!IsLogErrorOnly || result.IsError)
                 {
-                    ((Logger)logger).WriteLog(result);
+                    logger.WriteLog(result);
                 }
             }
         }
