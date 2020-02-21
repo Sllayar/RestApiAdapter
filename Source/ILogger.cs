@@ -1,6 +1,6 @@
 ﻿namespace FavoritMotors.Integration.RestApiAdapter
 {
-    internal interface ILogger
+    public interface ILogger
     {
         void WriteLog(ResponseData ResponseData);
     }

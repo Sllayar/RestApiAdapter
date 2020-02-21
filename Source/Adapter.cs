@@ -145,12 +145,12 @@ namespace FavoritMotors.Integration.RestApiAdapter
         {
             if (IsLog)
             {
-                if (logger == null)
-                    logger = new Logger(result, LogFileDir, LogFileName);
+                if (Logger == null)
+                    Logger = new Logger(result, LogFileDir, LogFileName);
 
                 if (!IsLogErrorOnly || result.IsError)
                 {
-                    logger.WriteLog(result);
+                    Logger.WriteLog(result);
                 }
             }
         }
@@ -160,7 +160,7 @@ namespace FavoritMotors.Integration.RestApiAdapter
         private static UTF8Encoding _enc = new UTF8Encoding();
 
 
-        ILogger logger { get; set; }
+        public ILogger Logger { get; set; }
         public string LogFileDir { get; set; }
         public string LogFileName { get; set; }
         public bool IsLogErrorOnly { get; set; }
